@@ -14,22 +14,28 @@
 		EAB8BB4C1F6A665400DFA25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */; };
 		EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */; };
 		EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */; };
-		EABCBF5A1F6A72C700B4ADB5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCBF591F6A72C700B4ADB5 /* Team.swift */; };
 		EABCBF5C1F6A737100B4ADB5 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */; };
+		EAD381AB1F6B212A00EC8524 /* team25.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A71F6B212A00EC8524 /* team25.json */; };
+		EAD381AC1F6B212A00EC8524 /* team65.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A81F6B212A00EC8524 /* team65.json */; };
+		EAD381AD1F6B212A00EC8524 /* team85.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A91F6B212A00EC8524 /* team85.json */; };
+		EAD381AE1F6B212A00EC8524 /* team134.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381AA1F6B212A00EC8524 /* team134.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAB8BB3E1F6A665400DFA25E /* TheTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB8BB411F6A665400DFA25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAB8BB431F6A665400DFA25E /* TeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamList.swift; sourceTree = "<group>"; };
+		EAB8BB431F6A665400DFA25E /* TeamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamList.swift; path = Controller/TeamList.swift; sourceTree = "<group>"; };
 		EAB8BB461F6A665400DFA25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAB8BB481F6A665400DFA25E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAB8BB4B1F6A665400DFA25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAB8BB4D1F6A665400DFA25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamOnCourt.swift; sourceTree = "<group>"; };
-		EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPlayerDetails.swift; sourceTree = "<group>"; };
-		EABCBF591F6A72C700B4ADB5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCell.swift; sourceTree = "<group>"; };
+		EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamOnCourt.swift; path = Controller/TeamOnCourt.swift; sourceTree = "<group>"; };
+		EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamPlayerDetails.swift; path = Controller/TeamPlayerDetails.swift; sourceTree = "<group>"; };
+		EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamListCell.swift; path = Controller/TeamListCell.swift; sourceTree = "<group>"; };
+		EAD381A71F6B212A00EC8524 /* team25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team25.json; sourceTree = "<group>"; };
+		EAD381A81F6B212A00EC8524 /* team65.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team65.json; sourceTree = "<group>"; };
+		EAD381A91F6B212A00EC8524 /* team85.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team85.json; sourceTree = "<group>"; };
+		EAD381AA1F6B212A00EC8524 /* team134.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team134.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,42 +68,21 @@
 		EAB8BB401F6A665400DFA25E /* TheTeam */ = {
 			isa = PBXGroup;
 			children = (
-				EABCBF561F6A726E00B4ADB5 /* Model */,
-				EABCBF571F6A727700B4ADB5 /* View */,
-				EABCBF581F6A727C00B4ADB5 /* Controller */,
+				EAB8BB451F6A665400DFA25E /* Main.storyboard */,
+				EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */,
+				EAB8BB431F6A665400DFA25E /* TeamList.swift */,
+				EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */,
+				EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */,
+				EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */,
 				EAB8BB411F6A665400DFA25E /* AppDelegate.swift */,
+				EAD381A71F6B212A00EC8524 /* team25.json */,
+				EAD381A81F6B212A00EC8524 /* team65.json */,
+				EAD381A91F6B212A00EC8524 /* team85.json */,
+				EAD381AA1F6B212A00EC8524 /* team134.json */,
 				EAB8BB481F6A665400DFA25E /* Assets.xcassets */,
 				EAB8BB4D1F6A665400DFA25E /* Info.plist */,
 			);
 			path = TheTeam;
-			sourceTree = "<group>";
-		};
-		EABCBF561F6A726E00B4ADB5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EABCBF591F6A72C700B4ADB5 /* Team.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EABCBF571F6A727700B4ADB5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EAB8BB451F6A665400DFA25E /* Main.storyboard */,
-				EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EABCBF581F6A727C00B4ADB5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EAB8BB431F6A665400DFA25E /* TeamList.swift */,
-				EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */,
-				EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */,
-				EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +146,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB8BB4C1F6A665400DFA25E /* LaunchScreen.storyboard in Resources */,
+				EAD381AB1F6B212A00EC8524 /* team25.json in Resources */,
 				EAB8BB491F6A665400DFA25E /* Assets.xcassets in Resources */,
+				EAD381AE1F6B212A00EC8524 /* team134.json in Resources */,
+				EAD381AC1F6B212A00EC8524 /* team65.json in Resources */,
 				EAB8BB471F6A665400DFA25E /* Main.storyboard in Resources */,
+				EAD381AD1F6B212A00EC8524 /* team85.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +166,6 @@
 				EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */,
 				EAB8BB441F6A665400DFA25E /* TeamList.swift in Sources */,
 				EAB8BB421F6A665400DFA25E /* AppDelegate.swift in Sources */,
-				EABCBF5A1F6A72C700B4ADB5 /* Team.swift in Sources */,
 				EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +179,7 @@
 				EAB8BB461F6A665400DFA25E /* Base */,
 			);
 			name = Main.storyboard;
+			path = View;
 			sourceTree = "<group>";
 		};
 		EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */ = {
@@ -199,6 +188,7 @@
 				EAB8BB4B1F6A665400DFA25E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

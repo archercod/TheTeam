@@ -12,9 +12,10 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var teamsTableView: UITableView!
     
-    var teamIDArray = [Int]()
+    var teamIDArray = [String]()
     var teamNameArray = [String]()
     var teamLogoURLArray = [String]()
+    var stadiumPhotoArray = ["piastCourt.jpg", "lechiaCourt.jpg", "termalicaCourt.jpg", "gornikCourt.jpg"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,7 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         downloadJsonFromUrl()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
     func downloadJsonFromUrl() {
         
@@ -44,7 +42,8 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         if let formationDict = formation as? NSDictionary {
                             
                             if let teamID = formationDict.value(forKey: "team_id") {
-                                self.teamIDArray.append(teamID as! Int)
+                                self.teamIDArray.append(String(teamID as! Int))
+                                print(teamID)
                             }
                             if let teamLogo = formationDict.value(forKey: "team_logo") {
                                 self.teamLogoURLArray.append(teamLogo as! String)
@@ -61,7 +60,11 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }.resume()
+        
+        print(teamIDArray)
     }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -75,20 +78,37 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = teamsTableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as? TeamListCell
         
         cell?.teamName.text = teamNameArray[indexPath.row]
+        cell?.backgroundImage.image = UIImage(named: stadiumPhotoArray[indexPath.row])
         
         let imageURL = NSURL(string: "http://\(teamLogoURLArray[indexPath.row])")
         
         if imageURL != nil {
-            let data = NSData(contentsOf: (imageURL as? URL)!)
-            cell?.teamLogo.image = UIImage(data: data as! Data)
+            let data = NSData(contentsOf: (imageURL as URL?)!)
+            cell?.teamLogo.image = UIImage(data: data! as Data)
         }
         
         return cell!
 
     }
     
-   
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "teamPlayers") {
+            
+            let DVC = segue.destination as! TeamOnCourt
+            
+            if let indexpath = self.teamsTableView.indexPathForSelectedRow {
+                let teamName = teamNameArray[indexpath.row] as String
+                DVC.teamName = teamName
+                
+                let teamLogo = teamLogoURLArray[indexpath.row] as String
+                DVC.teamLogo = teamLogo
+                
+                let teamID = teamIDArray[indexpath.row] as String
+                DVC.teamID = teamID
+            }
+        }
+    }
 
 
 }
