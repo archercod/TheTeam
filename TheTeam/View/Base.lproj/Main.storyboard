@@ -72,6 +72,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Available Team" id="cpY-cV-67S"/>
+                    <connections>
+                        <outlet property="teamsTableView" destination="84q-g4-UW7" id="D1h-Yf-Zng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +83,7 @@
         <!--Team-->
         <scene sceneID="tRP-TA-szA">
             <objects>
-                <viewController id="2fg-ie-pV5" sceneMemberID="viewController">
+                <viewController id="2fg-ie-pV5" customClass="TeamOnCourt" customModule="TheTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gj9-xo-UyY"/>
                         <viewControllerLayoutGuide type="bottom" id="oCd-Wu-II6"/>
@@ -146,10 +149,31 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Team" id="8SF-gG-zeG"/>
+                    <connections>
+                        <segue destination="gAq-az-rSK" kind="show" id="4pP-mb-qOp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPB-vk-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2796" y="123.68815592203899"/>
+        </scene>
+        <!--Team Player Details-->
+        <scene sceneID="6G4-kN-0NC">
+            <objects>
+                <viewController id="gAq-az-rSK" customClass="TeamPlayerDetails" customModule="TheTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pfk-Lt-Ln9"/>
+                        <viewControllerLayoutGuide type="bottom" id="w2c-8C-QTQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zzV-Ku-CMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAs-VZ-SCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3266" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mgs-eo-Hqz">
