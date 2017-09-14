@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Team {
+    
+    var teamID: Int
+    var teamName: String
+    var teamLogo: String
+
+}

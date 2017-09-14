@@ -12,6 +12,10 @@
 		EAB8BB471F6A665400DFA25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB451F6A665400DFA25E /* Main.storyboard */; };
 		EAB8BB491F6A665400DFA25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB481F6A665400DFA25E /* Assets.xcassets */; };
 		EAB8BB4C1F6A665400DFA25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */; };
+		EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */; };
+		EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */; };
+		EABCBF5A1F6A72C700B4ADB5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCBF591F6A72C700B4ADB5 /* Team.swift */; };
+		EABCBF5C1F6A737100B4ADB5 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		EAB8BB481F6A665400DFA25E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAB8BB4B1F6A665400DFA25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAB8BB4D1F6A665400DFA25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamOnCourt.swift; sourceTree = "<group>"; };
+		EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPlayerDetails.swift; sourceTree = "<group>"; };
+		EABCBF591F6A72C700B4ADB5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		EAB8BB401F6A665400DFA25E /* TheTeam */ = {
 			isa = PBXGroup;
 			children = (
+				EABCBF561F6A726E00B4ADB5 /* Model */,
+				EABCBF571F6A727700B4ADB5 /* View */,
+				EABCBF581F6A727C00B4ADB5 /* Controller */,
 				EAB8BB411F6A665400DFA25E /* AppDelegate.swift */,
-				EAB8BB431F6A665400DFA25E /* TeamList.swift */,
-				EAB8BB451F6A665400DFA25E /* Main.storyboard */,
 				EAB8BB481F6A665400DFA25E /* Assets.xcassets */,
-				EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */,
 				EAB8BB4D1F6A665400DFA25E /* Info.plist */,
 			);
 			path = TheTeam;
+			sourceTree = "<group>";
+		};
+		EABCBF561F6A726E00B4ADB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EABCBF591F6A72C700B4ADB5 /* Team.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EABCBF571F6A727700B4ADB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAB8BB451F6A665400DFA25E /* Main.storyboard */,
+				EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EABCBF581F6A727C00B4ADB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EAB8BB431F6A665400DFA25E /* TeamList.swift */,
+				EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */,
+				EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */,
+				EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABCBF5C1F6A737100B4ADB5 /* TeamListCell.swift in Sources */,
+				EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */,
 				EAB8BB441F6A665400DFA25E /* TeamList.swift in Sources */,
 				EAB8BB421F6A665400DFA25E /* AppDelegate.swift in Sources */,
+				EABCBF5A1F6A72C700B4ADB5 /* Team.swift in Sources */,
+				EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +344,7 @@
 				EAB8BB521F6A665400DFA25E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
