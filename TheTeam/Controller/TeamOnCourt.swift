@@ -62,54 +62,66 @@ class TeamOnCourt: UIViewController {
                 for player in playersArray {
                     if let playersDict = player as? NSDictionary {
                         
-                        if let playersPositions = playersDict.value(forKey: "lineup_position"), let playersPhotos = playersDict.value(forKey: "photo_url"), let playersNames = playersDict.value(forKey: "name"){
-                            let playerPosition = playersPositions as! Int
-                            print(playerPosition)
-                            let playerPhoto = playersPhotos as! String
-                            print(playerPhoto)
-                            let playerName = playersNames as! String
-                            print(playerName)
+                        if let playersLineupPositions = playersDict.value(forKey: "lineup_position"),
+                            let playersPhotos = playersDict.value(forKey: "photo_url"),
+                            let playersNames = playersDict.value(forKey: "name"),
+                            let playersAge = playersDict.value(forKey: "age"),
+                            let playersCountry = playersDict.value(forKey: "country"),
+                            let playersPosition = playersDict.value(forKey: "position") {
                             
-                            if playerPosition == 11 {
+                                let playerLineupPosition = playersLineupPositions as! Int
+                                print(playerLineupPosition)
+                            
+                                let playerPhoto = playersPhotos as! String
+                                print(playerPhoto)
+                            
+                                let playerName = playersNames as! String
+                                print(playerName)
+                            
+                                let playerAge = playersAge as! Int
+                                print(playerAge)
+                            
+                                let playerCountry = playersCountry as! String
+                                print(playerCountry)
+                            
+                                let playerPosition = playersPosition as! String
+                                print(playerPosition)
+                            
+                            if playerLineupPosition == 11 {
                                 playerImageFromUrl(string: playerPhoto, tag: 0)
                                 playerButtonWithImage[0].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 21 && playerPosition <= 29  {
+                            } else if playerLineupPosition >= 21 && playerLineupPosition <= 29  {
                                 playerImageFromUrl(string: playerPhoto, tag: 1)
                                 playerButtonWithImage[1].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 31 && playerPosition <= 39  {
+                            } else if playerLineupPosition >= 31 && playerLineupPosition <= 39  {
                                 playerImageFromUrl(string: playerPhoto, tag: 2)
                                 playerButtonWithImage[2].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 41 && playerPosition <= 49 {
+                            } else if playerLineupPosition >= 41 && playerLineupPosition <= 49 {
                                 playerImageFromUrl(string: playerPhoto, tag: 3)
                                 playerButtonWithImage[3].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 51 && playerPosition <= 59 {
+                            } else if playerLineupPosition >= 51 && playerLineupPosition <= 59 {
                                 playerImageFromUrl(string: playerPhoto, tag: 4)
                                 playerButtonWithImage[4].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 61 && playerPosition <= 69 {
+                            } else if playerLineupPosition >= 61 && playerLineupPosition <= 69 {
                                 playerImageFromUrl(string: playerPhoto, tag: 5)
                                 playerButtonWithImage[5].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 71 && playerPosition <= 79 {
+                            } else if playerLineupPosition >= 71 && playerLineupPosition <= 79 {
                                 playerImageFromUrl(string: playerPhoto, tag: 6)
                                 playerButtonWithImage[6].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 81 && playerPosition <= 89 {
+                            } else if playerLineupPosition >= 81 && playerLineupPosition <= 89 {
                                 playerImageFromUrl(string: playerPhoto, tag: 7)
                                 playerButtonWithImage[7].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 91 && playerPosition <= 99 {
+                            } else if playerLineupPosition >= 91 && playerLineupPosition <= 99 {
                                 playerImageFromUrl(string: playerPhoto, tag: 8)
                                 playerButtonWithImage[8].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 101 && playerPosition <= 109 {
+                            } else if playerLineupPosition >= 101 && playerLineupPosition <= 109 {
                                     playerImageFromUrl(string: playerPhoto, tag: 9)
                                 playerButtonWithImage[9].setTitle(playerName, for: .normal)
-                            } else if playerPosition >= 111 && playerPosition <= 119 {
+                            } else if playerLineupPosition >= 111 && playerLineupPosition <= 119 {
                                 playerImageFromUrl(string: playerPhoto, tag: 10)
                                 playerButtonWithImage[10].setTitle(playerName, for: .normal)
                             }
                         }
-                        
-                            
-                        
-                        
-                       
                     }
                 }
             }
@@ -119,16 +131,6 @@ class TeamOnCourt: UIViewController {
         }
     }
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     
 }

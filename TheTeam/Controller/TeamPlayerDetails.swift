@@ -11,12 +11,15 @@ import UIKit
 class TeamPlayerDetails: UIViewController {
 
     @IBOutlet weak var playerImage: UIImageView!
-    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
-    @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    
+    var playerName: String?
+    var age: Int?
+    var country: String?
+    var position: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
