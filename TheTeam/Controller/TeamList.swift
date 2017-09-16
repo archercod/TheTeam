@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TeamList: UIViewController {
     
     @IBOutlet weak var teamsTableView: UITableView!
     
@@ -21,50 +21,12 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        teamsTableView.delegate = self
-        teamsTableView.dataSource = self
-        
-        downloadJsonFromUrl()
+        loadJSON()
     }
 
-    
-    
-    func downloadJsonFromUrl() {
-        
-        guard let url = URL(string: "https://spacedigital.pl/katalog/rekrutacja/formations.php") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
-                print(jsonObj!.value(forKey: "formations") ?? String.self)
-                
-                if let formationsArray = jsonObj!.value(forKey: "formations") as? NSArray {
-                    for formation in formationsArray {
-                        if let formationDict = formation as? NSDictionary {
-                            
-                            if let teamID = formationDict.value(forKey: "team_id") {
-                                self.teamIDArray.append(String(teamID as! Int))
-                                print(teamID)
-                            }
-                            if let teamLogo = formationDict.value(forKey: "team_logo") {
-                                self.teamLogoURLArray.append(teamLogo as! String)
-                            }
-                            if let teamName = formationDict.value(forKey: "team_name") {
-                                self.teamNameArray.append(teamName as! String)
-                            }
-                            
-                            OperationQueue.main.addOperation({ 
-                                self.teamsTableView.reloadData()
-                            })
-                        }
-                    }
-                }
-            }
-        }.resume()
-        
-        print(teamIDArray)
-    }
-    
-    
+}
+
+extension TeamList: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -88,7 +50,7 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell!
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,9 +69,46 @@ class TeamList: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let teamID = teamIDArray[indexpath.row] as String
                 DVC.teamID = teamID
             }
+        }    }
+}
+
+private extension TeamList {
+    
+    func loadJSON() {
+        
+        guard let url = URL(string: "https://spacedigital.pl/katalog/rekrutacja/formations.php") else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                print(jsonObj!.value(forKey: "formations") ?? String.self)
+                
+                if let formationsArray = jsonObj!.value(forKey: "formations") as? NSArray {
+                    for formation in formationsArray {
+                        if let formationDict = formation as? NSDictionary {
+                            
+                            if let teamID = formationDict.value(forKey: "team_id") {
+                                self.teamIDArray.append(String(teamID as! Int))
+                                print(teamID)
+                            }
+                            if let teamLogo = formationDict.value(forKey: "team_logo") {
+                                self.teamLogoURLArray.append(teamLogo as! String)
+                            }
+                            if let teamName = formationDict.value(forKey: "team_name") {
+                                self.teamNameArray.append(teamName as! String)
+                            }
+                            
+                            OperationQueue.main.addOperation({
+                                self.teamsTableView.reloadData()
+                            })
+                        }
+                    }
+                }
+            }
+            }.resume()
+        
+        print(teamIDArray)
+        
         }
-    }
 
 
 }
-

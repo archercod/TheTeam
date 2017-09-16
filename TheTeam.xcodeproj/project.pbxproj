@@ -13,12 +13,12 @@
 		EAB8BB491F6A665400DFA25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB481F6A665400DFA25E /* Assets.xcassets */; };
 		EAB8BB4C1F6A665400DFA25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */; };
 		EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */; };
-		EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */; };
 		EABCBF5C1F6A737100B4ADB5 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */; };
-		EAD381AB1F6B212A00EC8524 /* team25.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A71F6B212A00EC8524 /* team25.json */; };
+		EAD381AB1F6B212A00EC8524 /* team24.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A71F6B212A00EC8524 /* team24.json */; };
 		EAD381AC1F6B212A00EC8524 /* team65.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A81F6B212A00EC8524 /* team65.json */; };
 		EAD381AD1F6B212A00EC8524 /* team85.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381A91F6B212A00EC8524 /* team85.json */; };
 		EAD381AE1F6B212A00EC8524 /* team134.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD381AA1F6B212A00EC8524 /* team134.json */; };
+		EAD548C11F6C88080071C7E4 /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD548C01F6C88080071C7E4 /* TeamsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		EAB8BB4B1F6A665400DFA25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAB8BB4D1F6A665400DFA25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamOnCourt.swift; path = Controller/TeamOnCourt.swift; sourceTree = "<group>"; };
-		EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamPlayerDetails.swift; path = Controller/TeamPlayerDetails.swift; sourceTree = "<group>"; };
 		EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamListCell.swift; path = Controller/TeamListCell.swift; sourceTree = "<group>"; };
-		EAD381A71F6B212A00EC8524 /* team25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team25.json; sourceTree = "<group>"; };
+		EAD381A71F6B212A00EC8524 /* team24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team24.json; sourceTree = "<group>"; };
 		EAD381A81F6B212A00EC8524 /* team65.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team65.json; sourceTree = "<group>"; };
 		EAD381A91F6B212A00EC8524 /* team85.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team85.json; sourceTree = "<group>"; };
 		EAD381AA1F6B212A00EC8524 /* team134.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team134.json; sourceTree = "<group>"; };
+		EAD548C01F6C88080071C7E4 /* TeamsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +70,12 @@
 			children = (
 				EAB8BB451F6A665400DFA25E /* Main.storyboard */,
 				EAB8BB4A1F6A665400DFA25E /* LaunchScreen.storyboard */,
+				EAD548C01F6C88080071C7E4 /* TeamsModel.swift */,
 				EAB8BB431F6A665400DFA25E /* TeamList.swift */,
 				EABCBF5B1F6A737100B4ADB5 /* TeamListCell.swift */,
 				EAB8BB531F6A6D7100DFA25E /* TeamOnCourt.swift */,
-				EAB8BB551F6A6D9100DFA25E /* TeamPlayerDetails.swift */,
 				EAB8BB411F6A665400DFA25E /* AppDelegate.swift */,
-				EAD381A71F6B212A00EC8524 /* team25.json */,
+				EAD381A71F6B212A00EC8524 /* team24.json */,
 				EAD381A81F6B212A00EC8524 /* team65.json */,
 				EAD381A91F6B212A00EC8524 /* team85.json */,
 				EAD381AA1F6B212A00EC8524 /* team134.json */,
@@ -146,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB8BB4C1F6A665400DFA25E /* LaunchScreen.storyboard in Resources */,
-				EAD381AB1F6B212A00EC8524 /* team25.json in Resources */,
+				EAD381AB1F6B212A00EC8524 /* team24.json in Resources */,
 				EAB8BB491F6A665400DFA25E /* Assets.xcassets in Resources */,
 				EAD381AE1F6B212A00EC8524 /* team134.json in Resources */,
 				EAD381AC1F6B212A00EC8524 /* team65.json in Resources */,
@@ -163,7 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EABCBF5C1F6A737100B4ADB5 /* TeamListCell.swift in Sources */,
-				EAB8BB561F6A6D9100DFA25E /* TeamPlayerDetails.swift in Sources */,
+				EAD548C11F6C88080071C7E4 /* TeamsModel.swift in Sources */,
 				EAB8BB441F6A665400DFA25E /* TeamList.swift in Sources */,
 				EAB8BB421F6A665400DFA25E /* AppDelegate.swift in Sources */,
 				EAB8BB541F6A6D7100DFA25E /* TeamOnCourt.swift in Sources */,

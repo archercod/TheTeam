@@ -5,7 +5,6 @@
 //  Created by Marcin Pietrzak on 14.09.2017.
 //  Copyright © 2017 Marcin Pietrzak. All rights reserved.
 //
-
 import UIKit
 
 class TeamOnCourt: UIViewController {
@@ -17,23 +16,23 @@ class TeamOnCourt: UIViewController {
     var teamLogo: String?
     var teamName: String?
     var teamID: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getJsonFromUrl()
+        loadJSON()
         
-        print(teamID!)
-
         self.teamNameLabel.text = teamName
         
         let imageURL = NSURL(string: "http://\(String(teamLogo!)!)")
-        
         if imageURL != nil {
             let data = NSData(contentsOf: (imageURL as URL?)!)
             teamLogoImage.image = UIImage(data: data! as Data)
         }
         
+        for button in playerButtonWithImage {
+            button.layer.cornerRadius = 20
+        }
     }
     
     func playerImageFromUrl(string: String, tag: Int) {
@@ -41,13 +40,12 @@ class TeamOnCourt: UIViewController {
         
         if imageURL != nil {
             let data = NSData(contentsOf: (imageURL as URL!)!)
-            playerButtonWithImage[tag].setImage(UIImage(data: data! as Data), for: .normal)
+            playerButtonWithImage[tag].setImage(UIImage(data: data! as Data)?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
-
     }
     
     
-    func getJsonFromUrl(){
+    func loadJSON(){
         
         guard let path = Bundle.main.path(forResource: "team\(teamID!)", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
@@ -69,57 +67,39 @@ class TeamOnCourt: UIViewController {
                             let playersCountry = playersDict.value(forKey: "country"),
                             let playersPosition = playersDict.value(forKey: "position") {
                             
-                                let playerLineupPosition = playersLineupPositions as! Int
-                                print(playerLineupPosition)
+                            let playerLineupPosition = playersLineupPositions as! Int
+                            let playerPhoto = playersPhotos as! String
+                            let playerName = playersNames as! String
+                            let playerAge = playersAge as? Int
+                            let playerCountry = playersCountry as! String
+                            let playerPosition = playersPosition as! String
                             
-                                let playerPhoto = playersPhotos as! String
-                                print(playerPhoto)
                             
-                                let playerName = playersNames as! String
-                                print(playerName)
-                            
-                                let playerAge = playersAge as! Int
-                                print(playerAge)
-                            
-                                let playerCountry = playersCountry as! String
-                                print(playerCountry)
-                            
-                                let playerPosition = playersPosition as! String
-                                print(playerPosition)
-                            
-                            if playerLineupPosition == 11 {
+                            switch playerLineupPosition {
+                            case 11:
                                 playerImageFromUrl(string: playerPhoto, tag: 0)
-                                playerButtonWithImage[0].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 21 && playerLineupPosition <= 29  {
+                            case 21...29:
                                 playerImageFromUrl(string: playerPhoto, tag: 1)
-                                playerButtonWithImage[1].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 31 && playerLineupPosition <= 39  {
+                            case 31...39:
                                 playerImageFromUrl(string: playerPhoto, tag: 2)
-                                playerButtonWithImage[2].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 41 && playerLineupPosition <= 49 {
+                            case 41...49:
                                 playerImageFromUrl(string: playerPhoto, tag: 3)
-                                playerButtonWithImage[3].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 51 && playerLineupPosition <= 59 {
-                                playerImageFromUrl(string: playerPhoto, tag: 4)
-                                playerButtonWithImage[4].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 61 && playerLineupPosition <= 69 {
-                                playerImageFromUrl(string: playerPhoto, tag: 5)
-                                playerButtonWithImage[5].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 71 && playerLineupPosition <= 79 {
+                            case 51...59:
+                                 playerImageFromUrl(string: playerPhoto, tag: 4)
+                            case 61...69:
+                                 playerImageFromUrl(string: playerPhoto, tag: 5)
+                            case 71...79:
                                 playerImageFromUrl(string: playerPhoto, tag: 6)
-                                playerButtonWithImage[6].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 81 && playerLineupPosition <= 89 {
+                            case 81...89:
                                 playerImageFromUrl(string: playerPhoto, tag: 7)
-                                playerButtonWithImage[7].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 91 && playerLineupPosition <= 99 {
+                            case 91...99:
                                 playerImageFromUrl(string: playerPhoto, tag: 8)
-                                playerButtonWithImage[8].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 101 && playerLineupPosition <= 109 {
-                                    playerImageFromUrl(string: playerPhoto, tag: 9)
-                                playerButtonWithImage[9].setTitle(playerName, for: .normal)
-                            } else if playerLineupPosition >= 111 && playerLineupPosition <= 119 {
-                                playerImageFromUrl(string: playerPhoto, tag: 10)
-                                playerButtonWithImage[10].setTitle(playerName, for: .normal)
+                            case 101...109:
+                                playerImageFromUrl(string: playerPhoto, tag: 9)
+                            case 111...119:
+                                 playerImageFromUrl(string: playerPhoto, tag: 10)
+                            default:
+                                print("Error")
                             }
                         }
                     }
@@ -127,10 +107,10 @@ class TeamOnCourt: UIViewController {
             }
             
         } catch {
-            print("error")
+            print("Error")
         }
     }
-
-
+    
+    
     
 }
