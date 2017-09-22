@@ -8,23 +8,15 @@
 
 import Foundation
 
+// I prepare this model for Teams but I don't have enough of time to implement this in code. At the first I focused on make working code and then do some code refactoring.
+
 struct Teams {
     
-    let teamID: String
+    let teamID: Int
     let teamLogo: String
     let teamName: String
     
-    enum SerializationError: Error {
-        case missing(String)
-        case invalid(String, Any)
-    }
-    
-    init(json: [String:Any]) throws {
-        guard let teamID = json["team_id"] as? String else {throw SerializationError.missing("teamID is missing")}
-        guard let teamLogo = json["team_logo"] as? String else {throw SerializationError.missing("teamLogo is missing")}
-        
-        guard let teamName = json["team_name"] as? String else {throw SerializationError.missing("teamName is missing")}
-        
+    init(teamID: Int, teamLogo: String, teamName: String) {
         self.teamID = teamID
         self.teamLogo = teamLogo
         self.teamName = teamName

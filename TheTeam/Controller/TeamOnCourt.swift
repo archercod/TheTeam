@@ -15,7 +15,7 @@ class TeamOnCourt: UIViewController {
     
     var teamLogo: String?
     var teamName: String?
-    var teamID: String?
+    var teamID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

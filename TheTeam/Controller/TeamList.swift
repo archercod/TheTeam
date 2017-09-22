@@ -12,9 +12,7 @@ class TeamList: UIViewController {
     
     @IBOutlet weak var teamsTableView: UITableView!
     
-    var teamIDArray = [String]()
-    var teamNameArray = [String]()
-    var teamLogoURLArray = [String]()
+    var teamArray = [Teams]()
     var stadiumPhotoArray = ["piastCourt.jpg", "lechiaCourt.jpg", "termalicaCourt.jpg", "gornikCourt.jpg"]
 
     override func viewDidLoad() {
@@ -33,16 +31,18 @@ extension TeamList: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamNameArray.count
+        return teamArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = teamsTableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as? TeamListCell
         
-        cell?.teamName.text = teamNameArray[indexPath.row]
+        let teams = teamArray[indexPath.row]
+        
+        cell?.teamName.text = teams.teamName
         cell?.backgroundImage.image = UIImage(named: stadiumPhotoArray[indexPath.row])
         
-        let imageURL = NSURL(string: "http://\(teamLogoURLArray[indexPath.row])")
+        let imageURL = NSURL(string: "http://\(teams.teamLogo)")
         
         if imageURL != nil {
             let data = NSData(contentsOf: (imageURL as URL?)!)
@@ -60,13 +60,16 @@ extension TeamList: UITableViewDelegate, UITableViewDataSource {
             let DVC = segue.destination as! TeamOnCourt
             
             if let indexpath = self.teamsTableView.indexPathForSelectedRow {
-                let teamName = teamNameArray[indexpath.row] as String
+                
+                let teams = teamArray[indexpath.row]
+                
+                let teamName = teams.teamName as String
                 DVC.teamName = teamName
                 
-                let teamLogo = teamLogoURLArray[indexpath.row] as String
+                let teamLogo = teams.teamLogo as String
                 DVC.teamLogo = teamLogo
                 
-                let teamID = teamIDArray[indexpath.row] as String
+                let teamID = teams.teamID as Int
                 DVC.teamID = teamID
             }
         }    }
@@ -86,16 +89,29 @@ private extension TeamList {
                     for formation in formationsArray {
                         if let formationDict = formation as? NSDictionary {
                             
-                            if let teamID = formationDict.value(forKey: "team_id") {
-                                self.teamIDArray.append(String(teamID as! Int))
-                                print(teamID)
-                            }
-                            if let teamLogo = formationDict.value(forKey: "team_logo") {
-                                self.teamLogoURLArray.append(teamLogo as! String)
-                            }
-                            if let teamName = formationDict.value(forKey: "team_name") {
-                                self.teamNameArray.append(teamName as! String)
-                            }
+                            let teamIDStr: Int = {
+                                if let teamID = formationDict.value(forKey: "team_id") {
+                                    return teamID as! Int
+                                }
+                                return 0
+                            }()
+                            
+                            let teamLogoStr: String = {
+                                if let teamLogo = formationDict.value(forKey: "team_logo") {
+                                    return teamLogo as! String
+                                }
+                                return "No Data"
+                            }()
+                            
+                            let teamNameStr: String = {
+                                if let teamName = formationDict.value(forKey: "team_name") {
+                                    return teamName as! String
+                                }
+                                return "No Data"
+                            }()
+                            
+                            self.teamArray.append(Teams(teamID: teamIDStr, teamLogo: teamLogoStr, teamName: teamNameStr))
+                           
                             
                             OperationQueue.main.addOperation({
                                 self.teamsTableView.reloadData()
@@ -105,8 +121,6 @@ private extension TeamList {
                 }
             }
             }.resume()
-        
-        print(teamIDArray)
         
         }
 
